@@ -4,12 +4,14 @@ class Movie
   public $title;
   public $year;
   public $vote;
+  public $genre;
 
-  function __construct($title, $year, $vote)
+  function __construct($title, $year, $vote, array|string $genre)
   {
     $this->title = $title;
     $this->year = $year;
     $this->vote = $vote;
+    $this->genre = is_array($genre) ? $genre : [$genre];
   }
 
   public function isGood()
@@ -22,9 +24,9 @@ class Movie
   }
 }
 
-$avengers = new Movie('Infinite war', 2018, 5);
+$avengers = new Movie('Infinite war', 2018, 5, ['fantasy', 'avventura', 'saga']);
 
-$harry_potter = new Movie('I doni della morte', 2010, 4);
+$harry_potter = new Movie('I doni della morte', 2010, 4, 'fantasy');
 // echo $avengers->isGood();
 
 var_dump($harry_potter);
