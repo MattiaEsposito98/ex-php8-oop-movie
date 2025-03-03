@@ -16,6 +16,7 @@ class Movie
     $this->vote = $vote;
     $this->genre = is_array($genre) ? $genre : [$genre];
     $this->setPegi($pegi);
+    $this->pegi = $pegi;
   }
 
   public function isGood()

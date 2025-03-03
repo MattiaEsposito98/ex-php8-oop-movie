@@ -1,7 +1,7 @@
 <?php
 trait vietatoAiMinori
 {
-  private int $pegi;
+  public int $pegi;
 
   public function setPegi(int $pegi)
   {
@@ -11,11 +11,11 @@ trait vietatoAiMinori
   public function isForChild()
   {
     if ($this->pegi < 14) {
-      echo 'Questo film è adatto ai bambini';
+      return 'Questo film è adatto ai bambini';
     } else if ($this->pegi >= 14 && $this->pegi < 18) {
-      echo 'Visione consigliata con un adulto';
+      return 'Visione consigliata con un adulto';
     } else {
-      echo 'Il film non è adatto ai bambini';
+      return 'Il film non è adatto ai bambini';
     }
   }
 }

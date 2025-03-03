@@ -32,7 +32,7 @@ require_once './Models/Movie.php';
               }
               ?>
             </li>
-            <p class="list-group-item"> <?php echo $movie->isForChild(); ?></p>
+            <p class="list-group-item"> <?php echo "PEGI [" . $movie->pegi . "]<br>" . $movie->isForChild() ?></p>
           </ul>
         </div>
       <?php } ?>
