@@ -1,6 +1,8 @@
 <?php
-require_once './Models/Movie.php';
 require_once './db.php';
+require_once './Traits/traits.php';
+require_once './Models/Movie.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -30,6 +32,7 @@ require_once './db.php';
               }
               ?>
             </li>
+            <p class="list-group-item"> <?php echo $movie->isForChild(); ?></p>
           </ul>
         </div>
       <?php } ?>

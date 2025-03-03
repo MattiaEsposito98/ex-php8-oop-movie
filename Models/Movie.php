@@ -1,18 +1,21 @@
 <?php
-
+require_once('./db.php');
+include_once './Traits/traits.php';
 class Movie
 {
   public $title;
   public $year;
   public $vote;
   public $genre;
+  use vietatoAiMinori;
 
-  function __construct($title, $year, $vote, array|string $genre)
+  function __construct($title, $year, $vote, array|string $genre, $pegi)
   {
     $this->title = $title;
     $this->year = $year;
     $this->vote = $vote;
     $this->genre = is_array($genre) ? $genre : [$genre];
+    $this->setPegi($pegi);
   }
 
   public function isGood()
